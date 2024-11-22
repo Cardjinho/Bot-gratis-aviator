@@ -1,244 +1,115 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login e Cadastro</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gráfico Candlestick - Negócios</title>
+  <style>
+    /* Tornar tudo visualmente agradável */
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
 
-        .container {
-            width: 100%;
-            max-width: 360px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            position: relative;
-        }
+    .container {
+      width: 80%;
+      max-width: 900px;
+      background: #ffffff;
+      padding: 20px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      text-align: center;
+    }
 
-        .logo {
-            text-align: center;
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
+    h1 {
+      font-size: 24px;
+      color: #333333;
+      margin-bottom: 20px;
+    }
 
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 14px;
-            margin-bottom: 5px;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 10px;
-            font-size: 14px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        .form-group input:focus {
-            outline: none;
-            border-color: #007bff;
-        }
-
-        .link {
-            font-size: 14px;
-            text-align: right;
-            margin-top: -10px;
-            margin-bottom: 15px;
-        }
-
-        .link a {
-            color: #007bff;
-            text-decoration: none;
-        }
-
-        .link a:hover {
-            text-decoration: underline;
-        }
-
-        .button {
-            width: 100%;
-            background-color: #007bff;
-            color: white;
-            font-size: 16px;
-            padding: 10px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            text-align: center;
-        }
-
-        .button:hover {
-            background-color: #0056b3;
-        }
-
-        .toggle {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 14px;
-        }
-
-        .toggle a {
-            color: #007bff;
-            text-decoration: none;
-        }
-
-        .toggle a:hover {
-            text-decoration: underline;
-        }
-
-        .error-message {
-            color: red;
-            font-size: 14px;
-            margin-bottom: 10px;
-            text-align: center;
-        }
-
-        .support-icon {
-            position: absolute;
-            bottom: -30px;
-            left: 50%;
-            transform: translateX(-50%);
-            cursor: pointer;
-            text-align: center;
-        }
-
-        .support-icon img {
-            width: 50px;
-            height: 50px;
-        }
-    </style>
+    canvas {
+      margin-top: 20px;
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-financial"></script>
 </head>
 <body>
-    <div class="container">
-        <div class="logo">mOz Payment</div>
-        <div class="error-message" id="error-message"></div>
+  <div class="container">
+    <h1>Gráfico Candlestick - Negócios</h1>
+    <canvas id="candlestickChart"></canvas>
+  </div>
 
-        <form id="login-form">
-            <div class="form-group">
-                <label for="email">E-mail</label>
-                <input type="email" id="email" placeholder="E-mail" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Senha</label>
-                <input type="password" id="password" placeholder="Senha" required>
-            </div>
-            <div class="link">
-                <a href="#">Esqueceu sua senha?</a>
-            </div>
-            <button type="submit" class="button">Acessar minha conta</button>
-        </form>
+  <script>
+    // Dados fictícios para o gráfico candlestick
+    const candlestickData = [
+      { x: "2024-11-18", o: 110, h: 120, l: 105, c: 115 },
+      { x: "2024-11-19", o: 115, h: 125, l: 110, c: 120 },
+      { x: "2024-11-20", o: 120, h: 130, l: 115, c: 125 },
+      { x: "2024-11-21", o: 125, h: 140, l: 120, c: 130 },
+      { x: "2024-11-22", o: 130, h: 135, l: 125, c: 128 },
+    ];
 
-        <form id="register-form" style="display: none;">
-            <div class="form-group">
-                <label for="name">Nome</label>
-                <input type="text" id="name" placeholder="Nome" required>
-            </div>
-            <div class="form-group">
-                <label for="email-register">E-mail</label>
-                <input type="email" id="email-register" placeholder="E-mail" required>
-            </div>
-            <div class="form-group">
-                <label for="password-register">Senha</label>
-                <input type="password" id="password-register" placeholder="Senha" required>
-            </div>
-            <button type="submit" class="button">Criar conta grátis</button>
-        </form>
+    // Configuração do gráfico
+    const config = {
+      type: "candlestick",
+      data: {
+        datasets: [
+          {
+            label: "Gráfico de Negócios",
+            data: candlestickData,
+            borderColor: "#4caf50",
+            color: {
+              up: "#4caf50", // Cor do candle positivo
+              down: "#f44336", // Cor do candle negativo
+              unchanged: "#999999", // Cor para sem mudanças
+            },
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            display: true,
+          },
+          tooltip: {
+            mode: "index",
+            intersect: false,
+          },
+        },
+        scales: {
+          x: {
+            type: "time",
+            time: {
+              unit: "day",
+              tooltipFormat: "MMM D, YYYY",
+            },
+            title: {
+              display: true,
+              text: "Data",
+            },
+          },
+          y: {
+            title: {
+              display: true,
+              text: "Valor (R$)",
+            },
+          },
+        },
+      },
+    };
 
-        <div class="toggle">
-            <span id="toggle-text">Não tem uma conta? <a href="#" id="toggle-link">Cadastrar-se</a></span>
-        </div>
-
-        <div class="support-icon">
-            <img src="https://img.icons8.com/fluency/48/robot.png" alt="Suporte">
-        </div>
-    </div>
-
-    <!-- Firebase Config -->
-    <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js"></script>
-    <script>
-        // Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyCxBd5HkYL1h_zmUiEe2O-yM9n9KG1JMR4",
-            authDomain: "moz-payment.firebaseapp.com",
-            projectId: "moz-payment",
-            storageBucket: "moz-payment.appspot.com",
-            messagingSenderId: "730222511392",
-            appId: "1:730222511392:android:8f4eb879d03970ab5f8345"
-        };
-
-        // Initialize Firebase
-        const app = firebase.initializeApp(firebaseConfig);
-        const auth = firebase.auth();
-
-        // Toggle between login and register
-        const loginForm = document.getElementById('login-form');
-        const registerForm = document.getElementById('register-form');
-        const toggleLink = document.getElementById('toggle-link');
-        const toggleText = document.getElementById('toggle-text');
-        const errorMessage = document.getElementById('error-message');
-
-        toggleLink.addEventListener('click', (e) => {
-            e.preventDefault();
-            errorMessage.textContent = '';
-            if (loginForm.style.display === 'none') {
-                loginForm.style.display = 'block';
-                registerForm.style.display = 'none';
-                toggleText.innerHTML = 'Não tem uma conta? <a href="#" id="toggle-link">Cadastrar-se</a>';
-            } else {
-                loginForm.style.display = 'none';
-                registerForm.style.display = 'block';
-                toggleText.innerHTML = 'Já possui conta? <a href="#" id="toggle-link">Login</a>';
-            }
-        });
-
-        // Login
-        loginForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-
-            try {
-                await auth.signInWithEmailAndPassword(email, password);
-                window.location.href = 'home.html'; // Redirect to home
-            } catch (error) {
-                errorMessage.textContent = 'E-mail ou senha inválidos!';
-            }
-        });
-
-        // Register
-        registerForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const email = document.getElementById('email-register').value;
-            const password = document.getElementById('password-register').value;
-
-            try {
-                await auth.createUserWithEmailAndPassword(email, password);
-                alert('Conta criada com sucesso! Redirecionando para login.');
-                loginForm.style.display = 'block';
-                registerForm.style.display = 'none';
-            } catch (error) {
-                errorMessage.textContent = 'Erro ao criar conta. Tente novamente.';
-            }
-        });
-    </script>
+    // Renderizar o gráfico
+    const ctx = document.getElementById("candlestickChart").getContext("2d");
+    new Chart(ctx, config);
+  </script>
 </body>
-                </html>
+</html>
