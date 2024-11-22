@@ -24,6 +24,7 @@
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             padding: 20px;
+            position: relative;
         }
 
         .logo {
@@ -102,11 +103,34 @@
         .toggle a:hover {
             text-decoration: underline;
         }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .support-icon {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .support-icon img {
+            width: 50px;
+            height: 50px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="logo">KIRVANO</div>
+        <div class="logo">mOz Payment</div>
+        <div class="error-message" id="error-message"></div>
+
         <form id="login-form">
             <div class="form-group">
                 <label for="email">E-mail</label>
@@ -128,24 +152,12 @@
                 <input type="text" id="name" placeholder="Nome" required>
             </div>
             <div class="form-group">
-                <label for="surname">Sobrenome</label>
-                <input type="text" id="surname" placeholder="Sobrenome" required>
-            </div>
-            <div class="form-group">
                 <label for="email-register">E-mail</label>
                 <input type="email" id="email-register" placeholder="E-mail" required>
             </div>
             <div class="form-group">
-                <label for="phone">Telefone</label>
-                <input type="tel" id="phone" placeholder="Telefone" required>
-            </div>
-            <div class="form-group">
                 <label for="password-register">Senha</label>
                 <input type="password" id="password-register" placeholder="Senha" required>
-            </div>
-            <div class="form-group">
-                <label for="confirm-password">Confirmar Senha</label>
-                <input type="password" id="confirm-password" placeholder="Confirmar Senha" required>
             </div>
             <button type="submit" class="button">Criar conta grátis</button>
         </form>
@@ -153,17 +165,40 @@
         <div class="toggle">
             <span id="toggle-text">Não tem uma conta? <a href="#" id="toggle-link">Cadastrar-se</a></span>
         </div>
+
+        <div class="support-icon">
+            <img src="https://img.icons8.com/fluency/48/robot.png" alt="Suporte">
+        </div>
     </div>
 
+    <!-- Firebase Config -->
+    <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js"></script>
     <script>
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCxBd5HkYL1h_zmUiEe2O-yM9n9KG1JMR4",
+            authDomain: "moz-payment.firebaseapp.com",
+            projectId: "moz-payment",
+            storageBucket: "moz-payment.appspot.com",
+            messagingSenderId: "730222511392",
+            appId: "1:730222511392:android:8f4eb879d03970ab5f8345"
+        };
+
+        // Initialize Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+
+        // Toggle between login and register
         const loginForm = document.getElementById('login-form');
         const registerForm = document.getElementById('register-form');
         const toggleLink = document.getElementById('toggle-link');
         const toggleText = document.getElementById('toggle-text');
+        const errorMessage = document.getElementById('error-message');
 
         toggleLink.addEventListener('click', (e) => {
             e.preventDefault();
-
+            errorMessage.textContent = '';
             if (loginForm.style.display === 'none') {
                 loginForm.style.display = 'block';
                 registerForm.style.display = 'none';
@@ -174,6 +209,36 @@
                 toggleText.innerHTML = 'Já possui conta? <a href="#" id="toggle-link">Login</a>';
             }
         });
+
+        // Login
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                await auth.signInWithEmailAndPassword(email, password);
+                window.location.href = 'home.html'; // Redirect to home
+            } catch (error) {
+                errorMessage.textContent = 'E-mail ou senha inválidos!';
+            }
+        });
+
+        // Register
+        registerForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email-register').value;
+            const password = document.getElementById('password-register').value;
+
+            try {
+                await auth.createUserWithEmailAndPassword(email, password);
+                alert('Conta criada com sucesso! Redirecionando para login.');
+                loginForm.style.display = 'block';
+                registerForm.style.display = 'none';
+            } catch (error) {
+                errorMessage.textContent = 'Erro ao criar conta. Tente novamente.';
+            }
+        });
     </script>
 </body>
-  </html>
+                </html>
