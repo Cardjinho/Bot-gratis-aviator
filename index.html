@@ -1,115 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gráfico Candlestick - Negócios</title>
-  <style>
-    /* Tornar tudo visualmente agradável */
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f7fa;
-      margin: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
-
-    .container {
-      width: 80%;
-      max-width: 900px;
-      background: #ffffff;
-      padding: 20px;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-      border-radius: 10px;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 24px;
-      color: #333333;
-      margin-bottom: 20px;
-    }
-
-    canvas {
-      margin-top: 20px;
-      max-width: 100%;
-      height: auto;
-    }
-  </style>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-financial"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma PLACAR</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+        header {
+            background: #4CAF50;
+            color: white;
+            padding: 20px;
+        }
+        header h1 {
+            margin: 0;
+        }
+        main {
+            padding: 20px;
+        }
+        main h2 {
+            color: #333;
+        }
+        .buttons {
+            margin-top: 30px;
+        }
+        .buttons a {
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px;
+            padding: 15px 25px;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .create-account {
+            background: #4CAF50;
+            color: white;
+        }
+        .create-account:hover {
+            background: #45a049;
+        }
+        .official-group {
+            background: #007BFF;
+            color: white;
+        }
+        .official-group:hover {
+            background: #0056b3;
+        }
+        footer {
+            background: #333;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Gráfico Candlestick - Negócios</h1>
-    <canvas id="candlestickChart"></canvas>
-  </div>
-
-  <script>
-    // Dados fictícios para o gráfico candlestick
-    const candlestickData = [
-      { x: "2024-11-18", o: 110, h: 120, l: 105, c: 115 },
-      { x: "2024-11-19", o: 115, h: 125, l: 110, c: 120 },
-      { x: "2024-11-20", o: 120, h: 130, l: 115, c: 125 },
-      { x: "2024-11-21", o: 125, h: 140, l: 120, c: 130 },
-      { x: "2024-11-22", o: 130, h: 135, l: 125, c: 128 },
-    ];
-
-    // Configuração do gráfico
-    const config = {
-      type: "candlestick",
-      data: {
-        datasets: [
-          {
-            label: "Gráfico de Negócios",
-            data: candlestickData,
-            borderColor: "#4caf50",
-            color: {
-              up: "#4caf50", // Cor do candle positivo
-              down: "#f44336", // Cor do candle negativo
-              unchanged: "#999999", // Cor para sem mudanças
-            },
-          },
-        ],
-      },
-      options: {
-        responsive: true,
-        plugins: {
-          legend: {
-            display: true,
-          },
-          tooltip: {
-            mode: "index",
-            intersect: false,
-          },
-        },
-        scales: {
-          x: {
-            type: "time",
-            time: {
-              unit: "day",
-              tooltipFormat: "MMM D, YYYY",
-            },
-            title: {
-              display: true,
-              text: "Data",
-            },
-          },
-          y: {
-            title: {
-              display: true,
-              text: "Valor (R$)",
-            },
-          },
-        },
-      },
-    };
-
-    // Renderizar o gráfico
-    const ctx = document.getElementById("candlestickChart").getContext("2d");
-    new Chart(ctx, config);
-  </script>
+    <header>
+        <h1>Bem-vindo à Plataforma PLACAR</h1>
+        <p>Registre-se agora e participe do melhor sistema de apostas!</p>
+    </header>
+    <main>
+        <h2>Seja parte da nossa comunidade de jogadores</h2>
+        <p>Clique abaixo para criar sua conta ou entrar no grupo oficial.</p>
+        <div class="buttons">
+            <a href="https://bit.ly/Abrir-Aviator-1000x" class="create-account">CRIAR A SUA CONTA</a>
+            <a href="https://chat.whatsapp.com/ClDZJKRhVMiDFM5fUgQF1t" class="official-group">GRUPO OFICIAL</a>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Plataforma PLACAR. Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>
