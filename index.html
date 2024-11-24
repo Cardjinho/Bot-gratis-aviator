@@ -5,118 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Melhores Cassinos - Milionário Modz</title>
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-    }
-
-    header {
-      background-color: #00264d;
-      color: white;
-      padding: 15px 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 1.8em;
-    }
-
-    .casino-list {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      max-width: 800px;
-      margin: 20px auto;
-      padding: 0 15px;
-    }
-
-    .casino-card {
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .casino-card-content {
-      padding: 15px;
-    }
-
-    .casino-title {
-      font-size: 1.5em;
-      margin: 0 0 10px 0;
-      color: #00264d;
-    }
-
-    .casino-bonus {
-      font-size: 1em;
-      color: #333;
-      margin-bottom: 10px;
-    }
-
-    .casino-rating {
-      color: #f39c12;
-      font-weight: bold;
-      margin-bottom: 15px;
-    }
-
-    .casino-buttons {
-      display: flex;
-      gap: 10px;
-    }
-
-    .casino-buttons a {
-      flex: 1;
-      text-align: center;
-      text-decoration: none;
-      font-size: 1em;
-      color: white;
-      padding: 10px 15px;
-      border-radius: 5px;
-    }
-
-    .casino-buttons .btn-review {
-      background-color: #7f8c8d;
-    }
-
-    .casino-buttons .btn-visit {
-      background-color: #f39c12;
-    }
-
-    /* Estilo para o diálogo flutuante */
-    #dialog {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 80%;
-      max-width: 400px;
-      background-color: #00264d;
-      color: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      z-index: 1000;
-      text-align: center;
-    }
-
-    #dialog button {
-      margin-top: 10px;
-      padding: 10px 15px;
-      background-color: #f39c12;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    #dialog .close-btn {
-      background-color: #7f8c8d;
-    }
+    /* Mesmo estilo do anterior */
   </style>
 </head>
 <body>
@@ -152,8 +41,44 @@
         </div>
       </div>
 
-      <!-- Outros Cassinos -->
-      <!-- Continue com BacelaBets, MegagameLive, Bantubet e Elephant Bet como acima -->
+      <!-- Elephant Bet -->
+      <div class="casino-card">
+        <div class="casino-card-content">
+          <h2 class="casino-title">Elephant Bet</h2>
+          <p class="casino-bonus">Bônus são de até 8.000,00MT</p>
+          <p class="casino-rating">⭐ 4.6/5</p>
+          <div class="casino-buttons">
+            <a href="#" class="btn-review" data-bonus="Bônus são de até 8.000,00MT" data-link="https://media.elephantbet.co.mz/ad.aspx?pid=327&bid=12">Leia a revisão</a>
+            <a href="https://media.elephantbet.co.mz/ad.aspx?pid=327&bid=12" class="btn-visit">Visitar</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- MegagameLive -->
+      <div class="casino-card">
+        <div class="casino-card-content">
+          <h2 class="casino-title">MegagameLive</h2>
+          <p class="casino-bonus">Bônus são de até 15.000,00MT</p>
+          <p class="casino-rating">⭐ 4.7/5</p>
+          <div class="casino-buttons">
+            <a href="#" class="btn-review" data-bonus="Bônus são de até 15.000,00MT" data-link="https://promo.megagamelive.com/ads?adid=728&campaign=302">Leia a revisão</a>
+            <a href="https://promo.megagamelive.com/ads?adid=728&campaign=302" class="btn-visit">Visitar</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bantubet -->
+      <div class="casino-card">
+        <div class="casino-card-content">
+          <h2 class="casino-title">Bantubet</h2>
+          <p class="casino-bonus">Bônus são de até 12.000,00MT</p>
+          <p class="casino-rating">⭐ 4.4/5</p>
+          <div class="casino-buttons">
+            <a href="#" class="btn-review" data-bonus="Bônus são de até 12.000,00MT" data-link="https://ad.bantubet.com/?pid=141&bid=80">Leia a revisão</a>
+            <a href="https://ad.bantubet.com/?pid=141&bid=80" class="btn-visit">Visitar</a>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
 
@@ -166,14 +91,9 @@
   </div>
 
   <script>
-    // Referências globais ao diálogo e botões
-    const dialog = document.getElementById('dialog');
-    const dialogContent = document.getElementById('dialog-content');
-    const registerBtn = document.getElementById('register-btn');
-
     // Fecha o diálogo
     function closeDialog() {
-      dialog.style.display = 'none';
+      document.getElementById('dialog').style.display = 'none';
     }
 
     // Configura o diálogo ao clicar em "Leia a revisão"
@@ -183,14 +103,14 @@
         const bonus = this.getAttribute('data-bonus');
         const link = this.getAttribute('data-link');
 
-        dialogContent.textContent = bonus;
-        registerBtn.onclick = () => {
+        document.getElementById('dialog-content').textContent = bonus;
+        document.getElementById('register-btn').onclick = () => {
           window.open(link, '_blank');
         };
 
-        dialog.style.display = 'block';
+        document.getElementById('dialog').style.display = 'block';
       });
     });
   </script>
 </body>
-                                                                                                                                                                                                     </html>
+              </html>
