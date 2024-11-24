@@ -6,16 +6,15 @@
   <title>Melhores Cassinos - Milionário Modz</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
       margin: 0;
-      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
     }
 
     header {
-      background-color: #002244;
-      color: #fff;
-      padding: 10px 20px;
+      background-color: #00264d;
+      color: white;
+      padding: 15px 20px;
       text-align: center;
     }
 
@@ -27,18 +26,19 @@
     .casino-list {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      padding: 20px;
+      gap: 20px;
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 0 15px;
     }
 
     .casino-card {
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      margin: 10px 0;
-      width: 90%;
-      max-width: 500px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
     }
 
     .casino-card img {
@@ -47,143 +47,157 @@
     }
 
     .casino-card-content {
-      padding: 20px;
-      text-align: center;
+      padding: 15px;
     }
 
     .casino-title {
       font-size: 1.5em;
-      margin: 0;
+      margin: 0 0 10px 0;
+      color: #00264d;
     }
 
     .casino-bonus {
-      color: #444;
       font-size: 1em;
-      margin: 10px 0;
+      color: #333;
+      margin-bottom: 10px;
     }
 
     .casino-rating {
-      color: #ffcc00;
-      font-size: 1.2em;
+      color: #f39c12;
+      font-weight: bold;
+      margin-bottom: 15px;
     }
 
     .casino-buttons {
-      margin-top: 20px;
+      display: flex;
+      gap: 10px;
     }
 
-    .btn-review, .btn-visit {
+    .casino-buttons a {
+      flex: 1;
+      text-align: center;
       text-decoration: none;
+      font-size: 1em;
+      color: white;
       padding: 10px 15px;
-      margin: 5px;
       border-radius: 5px;
-      color: #fff;
-      font-weight: bold;
     }
 
-    .btn-review {
-      background-color: #666;
+    .casino-buttons .btn-review {
+      background-color: #7f8c8d;
     }
 
-    .btn-visit {
-      background-color: #ffcc00;
+    .casino-buttons .btn-visit {
+      background-color: #f39c12;
     }
 
-    .btn-review:hover, .btn-visit:hover {
-      opacity: 0.9;
+    @media (min-width: 768px) {
+      .casino-card {
+        flex-direction: row;
+      }
+
+      .casino-card img {
+        width: 300px;
+        height: auto;
+      }
+
+      .casino-card-content {
+        flex: 1;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Bem-vindo ao Milionário Modz - Melhores Cassinos</h1>
+    <h1>MELHORES CASSINOS</h1>
   </header>
 
-  <div class="casino-list">
+  <main>
+    <div class="casino-list">
+      <!-- 888Bets -->
+      <div class="casino-card">
+        <img src="https://nostrabet.com/wp-content/uploads/2022/10/888starz.jpg" alt="888Bets">
+        <div class="casino-card-content">
+          <h2 class="casino-title">888Bets</h2>
+          <p class="casino-bonus">Bônus são de até 5.000,00MT</p>
+          <p class="casino-rating">⭐ 4.5/5</p>
+          <div class="casino-buttons">
+            <a href="#" class="btn-review">Leia a revisão</a>
+            <a href="https://media.888africa.com/C.ashx?btag=a_4100b_4c_&affid=3377&siteid=4100&adid=4&c=" class="btn-visit">Visitar</a>
+          </div>
+        </div>
+      </div>
 
-    <!-- 888Bets -->
-    <div class="casino-card">
-      <img src="https://nostrabet.com/mz/888bets-mozambique-mobile-app/" alt="888Bets">
-      <div class="casino-card-content">
-        <h2 class="casino-title">888Bets</h2>
-        <p class="casino-bonus">Bônus são de até 5.000,00MT</p>
-        <p class="casino-rating">⭐ 4.5/5</p>
-        <div class="casino-buttons">
-          <a href="https://nostrabet.com/mz/888bets-mozambique-mobile-app/" class="btn-review" target="_blank">Leia a revisão</a>
-          <a href="https://nostrabet.com/mz/888bets-mozambique-mobile-app/" class="btn-visit" target="_blank">Visitar</a>
+      <!-- Placard -->
+      <div class="casino-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Placard_apostas.jpg" alt="Placard">
+        <div class="casino-card-content">
+          <h2 class="casino-title">Placard</h2>
+          <p class="casino-bonus">Bônus são de até 10.000,00MT</p>
+          <p class="casino-rating">⭐ 4.8/5</p>
+          <div class="casino-buttons">
+            <a href="#" class="btn-review">Leia a revisão</a>
+            <a href="https://media1.placard.co.mz/redirect.aspx?pid=4241&bid=1690" class="btn-visit">Visitar</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- BacelaBets -->
+      <div class="casino-card">
+        <img src="https://www.academiadasapostasmz.com/wp-content/uploads/2023/01/BacelaBets_Mozambique.png" alt="BacelaBets">
+        <div class="casino-card-content">
+          <h2 class="casino-title">BacelaBets</h2>
+          <p class="casino-bonus">Bônus são de até 3.000,00MT</p>
+          <p class="casino-rating">⭐ 4.2/5</p>
+          <div class="casino-buttons">
+            <a href="#" class="btn-review">Leia a revisão</a>
+            <a href="https://media.888africa.com/C.ashx?btag=a_4100b_437c_&affid=3377&siteid=4100&adid=437&c=" class="btn-visit">Visitar</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Megagamelive -->
+      <div class="casino-card">
+        <img src="https://www.megagamelive.com/assets/images/logo.png" alt="Megagamelive">
+        <div class="casino-card-content">
+          <h2 class="casino-title">Megagamelive</h2>
+          <p class="casino-bonus">Bônus são de até 10.000,00MT</p>
+          <p class="casino-rating">⭐ 4.7/5</p>
+          <div class="casino-buttons">
+            <a href="#" class="btn-review">Leia a revisão</a>
+            <a href="https://www.megagamelive.com/affiliates/?btag=2084979" class="btn-visit">Visitar</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bantubet -->
+      <div class="casino-card">
+        <img src="https://www.bantubet.com/assets/img/logo.png" alt="Bantubet">
+        <div class="casino-card-content">
+          <h2 class="casino-title">Bantubet</h2>
+          <p class="casino-bonus">Bônus são de até 6.000,00MT</p>
+          <p class="casino-rating">⭐ 4.6/5</p>
+          <div class="casino-buttons">
+            <a href="#" class="btn-review">Leia a revisão</a>
+            <a href="https://affiliates.bantubet.co.mz/links/?btag=1597722" class="btn-visit">Visitar</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Elephant bet -->
+      <div class="casino-card">
+        <img src="https://elephantbet.co.mz/images/elephantbet-logo.png" alt="Elephant Bet">
+        <div class="casino-card-content">
+          <h2 class="casino-title">Elephant Bet</h2>
+          <p class="casino-bonus">Bônus são de até 5.000,00MT</p>
+          <p class="casino-rating">⭐ 4.9/5</p>
+          <div class="casino-buttons">
+            <a href="#" class="btn-review">Leia a revisão</a>
+            <a href="https://record.elephantbet.com/_gfu63FfyMIwWqcfzuvZcQGNd7ZgqdRLk/1/" class="btn-visit">Visitar</a>
+          </div>
         </div>
       </div>
     </div>
-
-    <!-- Placard -->
-    <div class="casino-card">
-      <img src="https://www.placard.co.mz/assets/img/logo.png" alt="Placard">
-      <div class="casino-card-content">
-        <h2 class="casino-title">Placard</h2>
-        <p class="casino-bonus">Bônus são de até 10.000,00MT</p>
-        <p class="casino-rating">⭐ 4.8/5</p>
-        <div class="casino-buttons">
-          <a href="https://www.placard.co.mz/" class="btn-review" target="_blank">Leia a revisão</a>
-          <a href="https://www.placard.co.mz/" class="btn-visit" target="_blank">Visitar</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Elephant Bet -->
-    <div class="casino-card">
-      <img src="https://mz.linkedin.com/company/elephantbet-mo%C3%A7ambique" alt="Elephant Bet">
-      <div class="casino-card-content">
-        <h2 class="casino-title">Elephant Bet</h2>
-        <p class="casino-bonus">Bônus são de até 5.000,00MT</p>
-        <p class="casino-rating">⭐ 4.2/5</p>
-        <div class="casino-buttons">
-          <a href="https://mz.linkedin.com/company/elephantbet-mo%C3%A7ambique" class="btn-review" target="_blank">Leia a revisão</a>
-          <a href="https://mz.linkedin.com/company/elephantbet-mo%C3%A7ambique" class="btn-visit" target="_blank">Visitar</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bantubet -->
-    <div class="casino-card">
-      <img src="https://www.google.com/search?client=ms-android-huawei-rev1&q=bantubet" alt="Bantubet">
-      <div class="casino-card-content">
-        <h2 class="casino-title">Bantubet</h2>
-        <p class="casino-bonus">Bônus são de até 6.000,00MT</p>
-        <p class="casino-rating">⭐ 4.3/5</p>
-        <div class="casino-buttons">
-          <a href="https://www.google.com/search?client=ms-android-huawei-rev1&q=bantubet" class="btn-review" target="_blank">Leia a revisão</a>
-          <a href="https://www.google.com/search?client=ms-android-huawei-rev1&q=bantubet" class="btn-visit" target="_blank">Visitar</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Megagamelive -->
-    <div class="casino-card">
-      <img src="https://www.facebook.com/megagamelive/" alt="Megagamelive">
-      <div class="casino-card-content">
-        <h2 class="casino-title">Megagamelive</h2>
-        <p class="casino-bonus">Bônus são de até 10.000,00MT</p>
-        <p class="casino-rating">⭐ 4.6/5</p>
-        <div class="casino-buttons">
-          <a href="https://www.facebook.com/megagamelive/" class="btn-review" target="_blank">Leia a revisão</a>
-          <a href="https://www.facebook.com/megagamelive/" class="btn-visit" target="_blank">Visitar</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bacelabets -->
-    <div class="casino-card">
-      <img src="https://www.academiadasapostasmz.com/blog/review/bacelabet-review" alt="Bacelabets">
-      <div class="casino-card-content">
-        <h2 class="casino-title">Bacelabets</h2>
-        <p class="casino-bonus">Bônus são de até 3.000,00MT</p>
-        <p class="casino-rating">⭐ 4.0/5</p>
-        <div class="casino-buttons">
-          <a href="https://www.academiadasapostasmz.com/blog/review/bacelabet-review" class="btn-review" target="_blank">Leia a revisão</a>
-          <a href="https://www.academiadasapostasmz.com/blog/review/bacelabet-review" class="btn-visit" target="_blank">Visitar</a>
-        </div>
-      </div>
-    </div>
-
-  </div>
+  </main>
 </body>
-</html>
+        </html>
