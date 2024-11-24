@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Descubra as melhores casas de apostas com bônus incríveis!">
+    <meta name="description" content="Descubra as melhores casas de apostas e aproveite os bônus incríveis!">
     <title>Casas de Apostas - MILIONÁRIO MODZ</title>
     <style>
         body {
@@ -13,15 +13,20 @@
             background: #f5f5f5;
             color: #333;
         }
+        /* Estilização do Cabeçalho */
         .header {
-            text-align: center;
-            padding: 20px;
-            background: #004d99;
+            background: linear-gradient(to right, #004d99, #003366);
             color: white;
+            text-align: center;
+            padding: 40px 20px;
         }
-        .banner img {
-            width: 100%;
-            height: auto;
+        .header h1 {
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .header p {
+            font-size: 18px;
+            margin-top: 10px;
         }
         .casas {
             padding: 20px;
@@ -47,7 +52,9 @@
         }
         .casa img {
             width: 100%;
+            height: 200px;
             border-radius: 10px;
+            object-fit: cover;
         }
         .casa h3 {
             margin: 10px 0;
@@ -65,39 +72,6 @@
         .btn:hover {
             background: #003366;
         }
-        .registro {
-            padding: 20px;
-            background: #f5f5f5;
-            text-align: center;
-        }
-        .registro h2 {
-            margin-bottom: 20px;
-        }
-        .registro form {
-            display: inline-block;
-            max-width: 400px;
-            width: 100%;
-        }
-        .registro input {
-            width: calc(100% - 20px);
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .registro button {
-            width: 100%;
-            padding: 10px;
-            background: #004d99;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        .registro button:hover {
-            background: #003366;
-        }
         .footer {
             text-align: center;
             padding: 10px;
@@ -109,71 +83,66 @@
 <body>
     <!-- Header -->
     <header class="header">
-        <h1>Bem-vindo ao MILIONÁRIO MODZ</h1>
-        <p>Descubra as melhores casas de apostas e aproveite os bônus!</p>
+        <h1>Casas de Apostas</h1>
+        <p>Descubra as melhores plataformas de apostas com MILIONÁRIO MODZ</p>
     </header>
-
-    <!-- Banner -->
-    <section class="banner">
-        <img src="https://via.placeholder.com/1200x400?text=Casas+de+Apostas+Banner" alt="Banner Casas de Apostas">
-    </section>
 
     <!-- Casas de Apostas -->
     <section class="casas">
-        <h2>Confira as Melhores Casas de Apostas</h2>
-        <div class="casas-list">
-            <div class="casa">
-                <img src="https://via.placeholder.com/300x200?text=888Bets" alt="888Bets">
-                <h3>888Bets</h3>
-                <p>Aproveite bônus exclusivos e uma experiência premium.</p>
-                <a href="#" class="btn">Registrar-se</a>
-            </div>
-            <div class="casa">
-                <img src="https://via.placeholder.com/300x200?text=Bacelabets" alt="Bacelabets">
-                <h3>Bacelabets</h3>
-                <p>Os melhores odds e promoções imperdíveis!</p>
-                <a href="#" class="btn">Registrar-se</a>
-            </div>
-            <div class="casa">
-                <img src="https://via.placeholder.com/300x200?text=Elephant+Bet" alt="Elephant Bet">
-                <h3>Elephant Bet</h3>
-                <p>Bônus de boas-vindas incríveis para novos usuários.</p>
-                <a href="#" class="btn">Registrar-se</a>
-            </div>
-            <div class="casa">
-                <img src="https://via.placeholder.com/300x200?text=Placard+Bets" alt="Placard Bets">
-                <h3>Placard Bets</h3>
-                <p>Plataforma confiável e fácil de usar.</p>
-                <a href="#" class="btn">Registrar-se</a>
-            </div>
-            <div class="casa">
-                <img src="https://via.placeholder.com/300x200?text=Bantubet" alt="Bantubet">
-                <h3>Bantubet</h3>
-                <p>Grandes chances de vitória e promoções diárias.</p>
-                <a href="#" class="btn">Registrar-se</a>
-            </div>
-            <div class="casa">
-                <img src="https://via.placeholder.com/300x200?text=Megagamelive" alt="Megagamelive">
-                <h3>Megagamelive</h3>
-                <p>Apostas ao vivo com emoção garantida!</p>
-                <a href="#" class="btn">Registrar-se</a>
-            </div>
+        <h2>Melhores Casas de Apostas</h2>
+        <div class="casas-list" id="casas-list">
+            <!-- Conteúdo será adicionado dinamicamente -->
         </div>
-    </section>
-
-    <!-- Formulário de Registro -->
-    <section class="registro">
-        <h2>Cadastre-se Agora!</h2>
-        <form action="#">
-            <input type="text" name="nome" placeholder="Seu Nome" required>
-            <input type="email" name="email" placeholder="Seu E-mail" required>
-            <button type="submit" class="btn">Enviar</button>
-        </form>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
         <p>&copy; 2024 MILIONÁRIO MODZ - Todos os direitos reservados.</p>
     </footer>
+
+    <script>
+        // Dados das Casas de Apostas
+        const casas = [
+            { name: "888Bets", description: "Aproveite bônus exclusivos e uma experiência premium.", image: "sports" },
+            { name: "Bacelabets", description: "Os melhores odds e promoções imperdíveis!", image: "casino" },
+            { name: "Elephant Bet", description: "Bônus de boas-vindas incríveis para novos usuários.", image: "betting" },
+            { name: "Placard Bets", description: "Plataforma confiável e fácil de usar.", image: "money" },
+            { name: "Bantubet", description: "Grandes chances de vitória e promoções diárias.", image: "soccer" },
+            { name: "Megagamelive", description: "Apostas ao vivo com emoção garantida!", image: "live betting" }
+        ];
+
+        // Função para buscar imagens de uma API
+        async function fetchImage(query) {
+            const apiKey = 'YOUR_UNSPLASH_API_KEY'; // Substitua pela sua chave da API Unsplash
+            const url = `https://api.unsplash.com/search/photos?query=${query}&client_id=${apiKey}&per_page=1`;
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                return data.results[0]?.urls?.regular || 'https://via.placeholder.com/300x200?text=Imagem+Indisponível';
+            } catch {
+                return 'https://via.placeholder.com/300x200?text=Imagem+Indisponível';
+            }
+        }
+
+        // Função para renderizar as Casas de Apostas
+        async function renderCasas() {
+            const casasList = document.getElementById('casas-list');
+            for (const casa of casas) {
+                const imageUrl = await fetchImage(casa.image);
+                const casaElement = `
+                    <div class="casa">
+                        <img src="${imageUrl}" alt="${casa.name}">
+                        <h3>${casa.name}</h3>
+                        <p>${casa.description}</p>
+                        <a href="#" class="btn">Registrar-se</a>
+                    </div>
+                `;
+                casasList.innerHTML += casaElement;
+            }
+        }
+
+        // Inicializar a Renderização
+        renderCasas();
+    </script>
 </body>
-    </html>
+</html>
