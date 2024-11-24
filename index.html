@@ -148,20 +148,33 @@
 
   <main>
     <div class="casino-list">
-      <!-- 888Bets -->
+      <!-- Cassino 1 -->
       <div class="casino-card">
         <div class="casino-card-content">
           <h2 class="casino-title">888Bets</h2>
           <p class="casino-bonus">Bônus são de até 5.000,00MT</p>
           <p class="casino-rating">⭐ 4.5/5</p>
           <div class="casino-buttons">
-            <a class="btn-review" onclick="showReview('888Bets', 'Bônus são de até 5.000,00MT')">Leia a revisão</a>
-            <a href="https://media.888africa.com/C.ashx?btag=a_4100b_4c_&affid=3377&siteid=4100&adid=4&c=" class="btn-visit">Visitar</a>
+            <a class="btn-review" data-title="888Bets" data-bonus="Bônus são de até 5.000,00MT">Leia a revisão</a>
+            <a href="https://media.888africa.com/" class="btn-visit">Visitar</a>
           </div>
         </div>
       </div>
 
-      <!-- Outros cassinos seguem o mesmo padrão... -->
+      <!-- Cassino 2 -->
+      <div class="casino-card">
+        <div class="casino-card-content">
+          <h2 class="casino-title">Betway</h2>
+          <p class="casino-bonus">Bônus até 10.000,00MT</p>
+          <p class="casino-rating">⭐ 4.8/5</p>
+          <div class="casino-buttons">
+            <a class="btn-review" data-title="Betway" data-bonus="Bônus até 10.000,00MT">Leia a revisão</a>
+            <a href="https://www.betway.com" class="btn-visit">Visitar</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Adicione mais cassinos seguindo o mesmo padrão -->
     </div>
   </main>
 
@@ -175,15 +188,23 @@
   </div>
 
   <script>
-    function showReview(title, bonus) {
-      document.getElementById('dialog-title').innerText = title;
-      document.getElementById('dialog-bonus').innerText = bonus;
-      document.getElementById('dialog').style.display = 'flex';
-    }
+    // Função para abrir o diálogo com informações específicas
+    document.querySelectorAll('.btn-review').forEach(button => {
+      button.addEventListener('click', function() {
+        const title = this.getAttribute('data-title');
+        const bonus = this.getAttribute('data-bonus');
 
+        document.getElementById('dialog-title').innerText = title;
+        document.getElementById('dialog-bonus').innerText = bonus;
+
+        document.getElementById('dialog').style.display = 'flex';
+      });
+    });
+
+    // Função para fechar o diálogo
     function closeDialog() {
       document.getElementById('dialog').style.display = 'none';
     }
   </script>
 </body>
-            </html>
+  </html>
