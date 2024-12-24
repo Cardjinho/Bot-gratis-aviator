@@ -4,19 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enviar Mensagens</title>
-    <script src="script.js" defer></script>
 </head>
 <body>
-    <h1>Enviar Mensagens de Texto</h1>
+    <h1>Enviar Mensagem</h1>
     <form id="messageForm">
-        <label for="to">Número de Destino (com código do país):</label><br>
+        <label for="to">Número de Destino:</label>
         <input type="text" id="to" placeholder="+258840000000" required><br><br>
-        
-        <label for="message">Mensagem:</label><br>
+
+        <label for="message">Mensagem:</label>
         <textarea id="message" placeholder="Digite sua mensagem aqui..." required></textarea><br><br>
-        
-        <button type="submit">Enviar Mensagem</button>
+
+        <button type="submit">Enviar</button>
     </form>
+
     <p id="response"></p>
+
+    <script src="script.js"></script>
 </body>
-</html>
+        </html>
