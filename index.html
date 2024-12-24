@@ -3,24 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Envio de Mensagens</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <title>Enviar Mensagens</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Enviar Mensagens em Massa</h1>
-        <form id="smsForm">
-            <label for="numbers">Números de Telefone (separados por vírgula):</label>
-            <textarea id="numbers" name="numbers" required></textarea>
-
-            <label for="message">Mensagem:</label>
-            <textarea id="message" name="message" required></textarea>
-
-            <button type="submit">Enviar</button>
-        </form>
-        <div id="response"></div>
-    </div>
-
-    <script src="/static/script.js"></script>
+    <h1>Enviar Mensagens com Twilio</h1>
+    <form action="send_message.php" method="post">
+        <label for="numbers">Números de Telefone:</label>
+        <textarea id="numbers" name="numbers" placeholder="Digite os números aqui" rows="4" cols="50" required></textarea>
+        <br><br>
+        
+        <label for="message">Mensagem:</label>
+        <textarea id="message" name="message" placeholder="Digite a mensagem" rows="4" cols="50" required></textarea>
+        <br><br>
+        
+        <button type="submit">Enviar Mensagens</button>
+    </form>
 </body>
-</html>
+    </html>
