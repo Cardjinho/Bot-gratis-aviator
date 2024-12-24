@@ -1,5 +1,6 @@
 document.getElementById('smsForm').addEventListener('submit', async function (e) {
     e.preventDefault();
+
     const numbers = document.getElementById('numbers').value.split(',');
     const message = document.getElementById('message').value;
 
