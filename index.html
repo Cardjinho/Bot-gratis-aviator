@@ -3,22 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enviar Mensagens</title>
+    <title>Envio de Mensagens</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <h1>Enviar Mensagem</h1>
-    <form id="messageForm">
-        <label for="to">Número de Destino:</label>
-        <input type="text" id="to" placeholder="+258840000000" required><br><br>
+    <div class="container">
+        <h1>Enviar Mensagens em Massa</h1>
+        <form id="smsForm">
+            <label for="numbers">Números de Telefone (separados por vírgula):</label>
+            <textarea id="numbers" name="numbers" required></textarea>
 
-        <label for="message">Mensagem:</label>
-        <textarea id="message" placeholder="Digite sua mensagem aqui..." required></textarea><br><br>
+            <label for="message">Mensagem:</label>
+            <textarea id="message" name="message" required></textarea>
 
-        <button type="submit">Enviar</button>
-    </form>
+            <button type="submit">Enviar</button>
+        </form>
+        <div id="response"></div>
+    </div>
 
-    <p id="response"></p>
-
-    <script src="script.js"></script>
+    <script src="/static/script.js"></script>
 </body>
-        </html>
+</html>
