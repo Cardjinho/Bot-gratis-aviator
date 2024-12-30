@@ -7,85 +7,66 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #0A1128;
+  background: #0A1128;
   color: #FFF;
-  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
-/* Hero Section */
-.hero {
+/* Container de Erro */
+.error-container {
   text-align: center;
-  padding: 60px 20px;
-  background: #0E1F40;
 }
 
-.hero .title {
-  font-size: 2.5rem;
+.error-container .content {
+  background: #11264F;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.error-container .error-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
   margin-bottom: 20px;
 }
 
-.hero .description {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-}
-
-.hero .cta-btn {
-  background: #007BFF;
-  color: #FFF;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.hero .cta-btn:hover {
-  background: #0056b3;
-}
-
-/* Features Section */
-.features {
-  padding: 40px 20px;
-  background: #0A1128;
-}
-
-.features .container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.features .card {
-  background: #11264F;
-  padding: 20px;
-  border-radius: 8px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.features .card h3 {
+.error-container h1 {
+  font-size: 4rem;
   margin-bottom: 10px;
-  font-size: 1.5rem;
+  color: #007BFF;
 }
 
-.features .card p {
+.error-container p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
   color: #BBB;
 }
 
-/* Testimonials Section */
-.testimonials {
-  padding: 40px 20px;
-  background: #081226;
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
-.testimonials h2 {
-  text-align: center;
-  margin-bottom: 20px;
+.buttons .btn {
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  background: #007BFF;
+  color: #FFF;
+  transition: background 0.3s;
 }
 
-.testimonials .testimonial {
-  background: #11264F;
-  padding: 20px;
-  margin: 10px 0;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
+.buttons .btn.secondary {
+  background: #6C757D;
+}
+
+.buttons .btn:hover {
+  background: #0056b3;
+  }
