@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predictor Dashboard</title>
+    <!-- Fontes modernas e personalizadas -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212;
+            color: #fff;
+        }
+        .layout {
+            background-color: #000;
+            border: 1px solid #555;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            font-size: 10px;
+            font-family: 'Poppins', sans-serif;
+        }
+        .iframe-container {
+            background-color: #000;
+            border: 1px solid #555;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px;
+        }
+        iframe {
+            width: 100%;
+            height: 700px;
+            border: none;
+            border-radius: 10px;
+        }
+        /* Estilo do diálogo */
+        #welcome-dialog {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #333;
+            color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            width: 80%;
+            max-width: 500px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+        }
+        #welcome-dialog h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        #welcome-dialog p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        #welcome-dialog button {
+            padding: 10px 20px;
+            background-color: #1e90ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #welcome-dialog button:hover {
+            background-color: #3b8ee6;
+        }
+
+        /* Efeitos de neve vermelha */
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            z-index: 1000;
+            font-size: 10px; /* Diminuído o tamanho dos flocos */
+            color: red;
+            pointer-events: none;
+            animation: fall 5s linear infinite;
+        }
+        @keyframes fall {
+            0% {
+                transform: translateY(0) translateX(0);
+            }
+            100% {
+                transform: translateY(100vh) translateX(10px);
+            }
+        }
+
+        /* Estilo para a previsão dos números */
+        .prediction {
+            font-size: 24px;
+            font-family: 'Poppins', sans-serif;
+            color: #1e90ff;
+            font-weight: bold;
+        }
+        .prediction.red {
+            color: red;
+        }
+        #create-account {
+            font-size: 16px;
+            color: #fff;
+        }
+        #create-account.red {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- Layouts -->
+    <div class="layout">
+        PREDICTOR GRATUITO 2025
+    </div>
+
+    <!-- Previsão de números e "CRIE UMA CONTA NOVA" -->
+    <div class="layout" id="prediction">
+        <span class="prediction">1.00x</span> <br>
+        <span id="create-account">CRIE UMA CONTA NOVA</span>
+    </div>
+
+    <!-- Iframe -->
+    <div class="iframe-container">
+        <iframe src="https://www.megagamelive.com/affiliates/?btag=2084979"></iframe>
+    </div>
+
+    <!-- Diálogo de Boas-Vindas -->
+    <div id="welcome-dialog">
+        <h2>OLA CARO JOGAR, SEJA BEM VINDO AO PREDICTOR AVIATO 2025 100% GRATUITO.</h2>
+        <p>PARA COMEÇAR A UTILIZAR E SIMPLES CLIQUE NO BOTÃO DE REGISTRAR ABAIXO:</p>
+        <p>E CRIE SUA CONTA E FAÇA SEU DEPÓSITO APOS CRIAR A SUA CONTA.</p>
+        <p>DEPOIS JA ESTA PODES COMECAR A JOGAR O AVIATOR COM O NOSSO PREDICTOR.</p>
+        <button onclick="window.location.href='https://www.megagamelive.com/affiliates/?btag=2084979'">SE CADASTRAR</button>
+    </div>
+
+    <!-- Efeitos de Neve Vermelha -->
+    <div class="snowflake" style="left: 10%; animation-duration: 6s; animation-delay: 0s;">❄️</div>
+    <div class="snowflake" style="left: 20%; animation-duration: 7s; animation-delay: 1s;">❄️</div>
+    <div class="snowflake" style="left: 30%; animation-duration: 8s; animation-delay: 2s;">❄️</div>
+    <div class="snowflake" style="left: 50%; animation-duration: 6s; animation-delay: 3s;">❄️</div>
+    <div class="snowflake" style="left: 70%; animation-duration: 5s; animation-delay: 4s;">❄️</div>
+    <div class="snowflake" style="left: 90%; animation-duration: 7s; animation-delay: 5s;">❄️</div>
+
+    <script>
+        // Função para gerar a previsão dos números rapidamente
+        let predictionValues = [1.40, 2.00, 4.87, 6.68, 20.00, 34.16];
+        let predictionIndex = 0;
+        let predictionInterval = setInterval(function() {
+            let predictionElement = document.querySelector('.prediction');
+            predictionElement.textContent = predictionValues[predictionIndex] + "x";
+            predictionElement.classList.add('red');
+            predictionIndex++;
+            if (predictionIndex >= predictionValues.length) {
+                predictionIndex = 0;
+            }
+        }, 200); // Intervalo rápido para exibição dos números
+
+        // Exibir o texto "CRIE UMA CONTA NOVA" após 10 segundos e parar a contagem
+        setTimeout(function() {
+            document.getElementById('create-account').textContent = "CRIE UMA CONTA NOVA";
+            document.getElementById('create-account').classList.add('red'); // Mudar para vermelho
+        }, 10000);
+
+        // Parar a contagem e substituir o número por "CRIE UMA CONTA NOVA" após 10 segundos
+        setTimeout(function() {
+            clearInterval(predictionInterval); // Parar a contagem dos números
+        }, 10000);
+
+        // Exibir o diálogo de boas-vindas após 15 segundos
+        setTimeout(function() {
+            document.getElementById('welcome-dialog').style.display = 'block';
+        }, 15000);
+    </script>
+</body>
+  </html>
