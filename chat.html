@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        #dialog {
+            display: none;
+            background-color: #1c1c1c;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            width: 250px;
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        input[type="number"], input[type="text"] {
+            width: 80%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: none;
+            background-color: #333;
+            color: white;
+            font-size: 16px;
+        }
+
+        #confirmation {
+            display: none;
+            color: #4CAF50;
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .confirm-animation {
+            animation: confirmAnimation 2s ease;
+        }
+
+        @keyframes confirmAnimation {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="dialog" class="fade-in">
+    <h2>FEEDBACK</h2>
+    <form id="feedbackForm">
+        <input type="number" id="number" placeholder="Número" required><br>
+        <input type="text" id="message" placeholder="Sua mensagem" required><br>
+        <button type="button" class="button" onclick="sendFeedback()">Enviar</button>
+    </form>
+    <div id="confirmation" class="confirm-animation">
+        <p>Obrigado pelo seu feedback. Good Luck 😊</p>
+    </div>
+</div>
+
+<script>
+    // Exibe o diálogo após 2 segundos
+    setTimeout(() => {
+        document.getElementById("dialog").style.display = "block";
+    }, 2000);
+
+    function sendFeedback() {
+        var number = document.getElementById("number").value;
+        var message = document.getElementById("message").value;
+        
+        if (number && message) {
+            // Exibe animação de confirmação
+            document.getElementById("confirmation").style.display = "block";
+            document.getElementById("confirmation").classList.add("confirm-animation");
+
+            // Limpa os campos após o envio
+            setTimeout(() => {
+                // Redireciona para a página index.html após a confirmação
+                window.location.href = 'index.html';
+            }, 2000); // Redireciona após a animação de 2 segundos
+        } else {
+            alert("Por favor, preencha todos os campos.");
+        }
+    }
+</script>
+
+</body>
+  </html>
