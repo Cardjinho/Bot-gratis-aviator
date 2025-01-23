@@ -3,124 +3,219 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guia Prático para Afiliados</title>
+    <title>Guia de Afiliados</title>
+    <!-- Fonte Personalizada do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* CSS embutido para design */
-        body {
-            font-family: Arial, sans-serif;
+        /* Reset e configuração global */
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
         }
         header {
             background-color: #007bff;
             color: white;
-            padding: 20px 10px;
+            padding: 20px;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         header h1 {
-            margin: 0;
+            font-size: 2.5em;
+            margin-bottom: 5px;
+        }
+        header p {
+            font-size: 1.2em;
         }
         nav {
             display: flex;
             justify-content: center;
             background: #0056b3;
+            padding: 10px 0;
         }
         nav a {
             color: white;
             text-decoration: none;
-            padding: 10px 20px;
-            font-size: 16px;
+            margin: 0 15px;
+            font-size: 1em;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background 0.3s;
         }
         nav a:hover {
-            background-color: #003d80;
-            border-radius: 5px;
+            background: #003d80;
         }
         section {
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
         }
         section h2 {
             color: #0056b3;
+            font-size: 2em;
+            margin-bottom: 10px;
         }
+        section p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+        /* Botão refinado */
         .button-download {
-            background-color: #28a745;
+            background: linear-gradient(45deg, #28a745, #20c997);
             color: white;
+            padding: 12px 30px;
+            font-size: 1em;
             border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
+            border-radius: 50px;
             cursor: pointer;
             text-decoration: none;
-            font-size: 16px;
+            transition: box-shadow 0.3s, transform 0.3s;
         }
         .button-download:hover {
-            background-color: #218838;
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
         }
-        footer {
-            background-color: #333;
-            color: white;
+        /* Pesquisa refinada */
+        #pesquisar {
+            margin: 30px auto;
             text-align: center;
-            padding: 10px 0;
-            margin-top: 20px;
         }
-        footer p {
-            margin: 0;
-            font-size: 14px;
+        #search {
+            width: 70%;
+            max-width: 500px;
+            padding: 12px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            outline: none;
+        }
+        #search:focus {
+            border-color: #007bff;
+        }
+        #pesquisar button {
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 12px 20px;
+            margin-left: 10px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        #pesquisar button:hover {
+            background: #0056b3;
+        }
+        /* Chat em estilo WhatsApp */
+        .chatbot {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg') no-repeat center center;
+            background-size: cover;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        .chatbot:hover {
+            transform: scale(1.1);
+        }
+        .popup {
+            position: fixed;
+            bottom: 90px;
+            right: 30px;
+            background: white;
+            color: #333;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: none;
+            max-width: 250px;
+            font-size: 0.9em;
+            text-align: center;
+        }
+        .popup button {
+            background: linear-gradient(45deg, #ff5722, #e64a19);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 20px;
+            font-size: 0.9em;
+            cursor: pointer;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Guia Prático para Afiliados</h1>
-        <p>Aprenda estratégias para maximizar seus ganhos como afiliado.</p>
+        <h1>Guia de Afiliados</h1>
+        <p>Maximize seus ganhos e aprenda estratégias eficientes.</p>
     </header>
 
     <nav>
-        <a href="#ebook">Download do eBook</a>
-        <a href="#ferramentas">Ferramentas e Dicas</a>
-        <a href="#pesquisar">Pesquisar Marketing</a>
+        <a href="#ebook">Baixar eBook</a>
+        <a href="#ferramentas">Ferramentas</a>
+        <a href="#pesquisar">Pesquisar</a>
     </nav>
 
     <section id="ebook">
-        <h2>Faça o Download do eBook</h2>
-        <p>Baixe gratuitamente o eBook e descubra como ter mais sucesso como afiliado.</p>
-        <a href="Guia_Pratico_para_Afiliados_Detalhado.pdf" class="button-download" download>Baixar eBook</a>
+        <h2>Baixe o eBook</h2>
+        <p>Descubra 5 formas de ganhar dinheiro e ferramentas essenciais.</p>
+        <a href="Guia_Pratico_para_Afiliados_Detalhado.pdf" class="button-download" download>Baixar Agora</a>
     </section>
 
     <section id="ferramentas">
-        <h2>Ferramentas e Dicas</h2>
-        <p>Explore estratégias e ferramentas para afiliados, como:</p>
-        <ul style="text-align: left; display: inline-block;">
-            <li>Redes Sociais para Divulgação</li>
-            <li>Grupos de Sinais no WhatsApp ou Telegram</li>
-            <li>Criação de Conteúdo Relevante</li>
-            <li>Parcerias com Influenciadores</li>
-        </ul>
+        <h2>Ferramentas Avançadas</h2>
+        <p>Obtenha as ferramentas que facilitam seu trabalho como afiliado.</p>
     </section>
 
     <section id="pesquisar">
-        <h2>Pesquisar Mais Sobre Marketing</h2>
-        <input type="text" id="search" placeholder="Digite algo sobre marketing..." style="padding: 10px; width: 80%; max-width: 500px; margin: 10px auto;">
-        <button onclick="pesquisar()" style="padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 5px;">Pesquisar</button>
+        <h2>Pesquisar sobre Marketing</h2>
+        <div id="pesquisar">
+            <input type="text" id="search" placeholder="Digite algo para pesquisar...">
+            <button onclick="pesquisar()">Pesquisar</button>
+        </div>
     </section>
 
+    <div class="chatbot" onclick="togglePopup()"></div>
+    <div class="popup" id="popup">
+        Gostaria de obter ferramentas avançadas para o seu trabalho? São apenas 150.00MZN
+        <button onclick="comprarFerramenta()">COMPRAR FERRAMENTA</button>
+    </div>
+
     <footer>
-        <p>Programador >/<br>
+        <p style="text-align: center; margin: 10px 0;">Programador >/<br>
         Nome: Milionario Mods<br>
         WhatsApp: +258 86 798 3175</p>
     </footer>
 
     <script>
-        // JavaScript embutido para funcionalidades
         function pesquisar() {
-            const query = document.getElementById("search").value;
+            const query = document.getElementById('search').value;
             if (query.trim() === "") {
-                alert("Digite algo para pesquisar!");
+                alert('Por favor, insira algo para pesquisar.');
                 return;
             }
-            const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
-            window.open(searchUrl, "_blank");
+            const url = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+            window.open(url, '_blank');
+        }
+
+        function togglePopup() {
+            const popup = document.getElementById('popup');
+            popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function comprarFerramenta() {
+            const whatsappURL = 'https://wa.me/258853984699?text=Gostaria+de+fazer+o+pagamento+para+a+ferramenta+%28150.00+MZN%29';
+            window.open(whatsappURL, '_blank');
         }
     </script>
 </body>
-</html>
+        </html>
