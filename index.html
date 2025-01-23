@@ -1,212 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Botões com Animação Contínua</title>
-  <style>
-    body {
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background: linear-gradient(135deg, #1E213F, #000);
-      font-family: Arial, sans-serif;
-    }
-
-    .button-container {
-      text-align: center;
-    }
-
-    .button {
-      width: 200px;
-      height: 50px;
-      margin: 10px;
-      border: 2px solid #EEEEEE;
-      border-radius: 18px;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-      color: #FFFFFF;
-      background: transparent;
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 12px rgba(255, 255, 255, 0.3);
-    }
-
-    .button:active {
-      transform: scale(0.95);
-    }
-
-    .button::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.3);
-      transform: skewX(-45deg);
-      animation: slide 2s infinite;
-    }
-
-    @keyframes slide {
-      0% {
-        left: -100%;
-      }
-      50% {
-        left: 50%;
-      }
-      100% {
-        left: 200%;
-      }
-    }
-
-    .button1 {
-      background: linear-gradient(90deg, #1E213F, #EEEEEE);
-    }
-
-    .button2 {
-      background: linear-gradient(90deg, #1E213F, #AAAAFF);
-    }
-
-    .button3 {
-      background: linear-gradient(90deg, #1E213F, #FF5555);
-    }
-
-    .fab {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background: #4CAF50;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .fab:hover {
-      transform: scale(1.1);
-      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
-    }
-
-    .fab img {
-      width: 30px;
-      height: 30px;
-    }
-
-    /* Estilo para o diálogo */
-    .dialog {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: #1C1C1C;
-      color: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-      text-align: center;
-      max-width: 250px;
-      width: 100%;
-      z-index: 1000;
-    }
-
-    .dialog p {
-      font-size: 16px;
-      margin: 10px 0;
-    }
-
-    .dialog .dialog-btn {
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-      transition: background-color 0.3s;
-    }
-
-    .dialog .dialog-btn:hover {
-      background-color: #45a049;
-    }
-
-    .dialog .close-btn {
-      background-color: #FF5555;
-      color: white;
-      padding: 5px 10px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 14px;
-      margin-top: 10px;
-    }
-
-    .dialog .close-btn:hover {
-      background-color: #ff4444;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Prático para Afiliados</title>
+    <style>
+        /* CSS embutido para design */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #0056b3;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        nav a:hover {
+            background-color: #003d80;
+            border-radius: 5px;
+        }
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+        section h2 {
+            color: #0056b3;
+        }
+        .button-download {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .button-download:hover {
+            background-color: #218838;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
-  <div class="button-container">
-    <button class="button button1" onclick="showDialog('PLACARD')">PLACARD MZ</button>
-    <button class="button button2" onclick="navigateTo('mega.html')">MEGAGAMELIVE MZ</button>
-    <button class="button button3" onclick="showDialog('BANTUBET')">BANTUBET MZ</button>
-  </div>
+    <header>
+        <h1>Guia Prático para Afiliados</h1>
+        <p>Aprenda estratégias para maximizar seus ganhos como afiliado.</p>
+    </header>
 
-  <!-- FAB com ícone de Chat -->
-  <div class="fab" onclick="navigateTo('chat.html')">
-    <img src="https://cdn.iconduck.com/icons/104936/chat.png" alt="Chat">
-  </div>
+    <nav>
+        <a href="#ebook">Download do eBook</a>
+        <a href="#ferramentas">Ferramentas e Dicas</a>
+        <a href="#pesquisar">Pesquisar Marketing</a>
+    </nav>
 
-  <!-- Diálogo -->
-  <div id="dialog" class="dialog">
-    <p>OLA CARO USUÁRIO,</p>
-    <p>TENS QUE TER UMA NOVA CONTA PARA COMEÇAR A UTILIZAR O NOSSO PREDICTOR 100 GRATUITO 2025.</p>
-    <p>CRIE UMA NOVA CONTA E FAÇA SEU PRIMEIRO DEPÓSITO CLICANDO ABAIXO!</p>
-    <button class="dialog-btn" id="dialog-btn">CRIAR CONTA</button>
-    <button class="close-btn" onclick="closeDialog()">Fechar</button>
-  </div>
+    <section id="ebook">
+        <h2>Faça o Download do eBook</h2>
+        <p>Baixe gratuitamente o eBook e descubra como ter mais sucesso como afiliado.</p>
+        <a href="Guia_Pratico_para_Afiliados_Detalhado.pdf" class="button-download" download>Baixar eBook</a>
+    </section>
 
-  <script>
-    function navigateTo(url) {
-      window.location.href = url;
-    }
+    <section id="ferramentas">
+        <h2>Ferramentas e Dicas</h2>
+        <p>Explore estratégias e ferramentas para afiliados, como:</p>
+        <ul style="text-align: left; display: inline-block;">
+            <li>Redes Sociais para Divulgação</li>
+            <li>Grupos de Sinais no WhatsApp ou Telegram</li>
+            <li>Criação de Conteúdo Relevante</li>
+            <li>Parcerias com Influenciadores</li>
+        </ul>
+    </section>
 
-    function showDialog(site) {
-      // Exibe o diálogo
-      document.getElementById("dialog").style.display = "block";
+    <section id="pesquisar">
+        <h2>Pesquisar Mais Sobre Marketing</h2>
+        <input type="text" id="search" placeholder="Digite algo sobre marketing..." style="padding: 10px; width: 80%; max-width: 500px; margin: 10px auto;">
+        <button onclick="pesquisar()" style="padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 5px;">Pesquisar</button>
+    </section>
 
-      // Muda o link do botão dependendo do site clicado
-      const dialogBtn = document.getElementById("dialog-btn");
-      if (site === 'PLACARD') {
-        dialogBtn.onclick = function() {
-          window.location.href = 'https://media1.placard.co.mz/redirect.aspx?pid=4241&bid=1690';
-        };
-      } else if (site === 'BANTUBET') {
-        dialogBtn.onclick = function() {
-          window.location.href = 'https://affiliates.bantubet.co.mz/links/?btag=1597722';
-        };
-      }
-    }
+    <footer>
+        <p>Programador >/<br>
+        Nome: Milionario Mods<br>
+        WhatsApp: +258 86 798 3175</p>
+    </footer>
 
-    function closeDialog() {
-      // Fecha o diálogo
-      document.getElementById("dialog").style.display = "none";
-    }
-  </script>
+    <script>
+        // JavaScript embutido para funcionalidades
+        function pesquisar() {
+            const query = document.getElementById("search").value;
+            if (query.trim() === "") {
+                alert("Digite algo para pesquisar!");
+                return;
+            }
+            const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+            window.open(searchUrl, "_blank");
+        }
+    </script>
 </body>
-    </html>
+</html>
