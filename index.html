@@ -20,6 +20,52 @@
             text-align: center;
         }
 
+        /* Nova seção com a imagem animada */
+        .image-container {
+            width: 100%;
+            height: 200px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .image-container img {
+            animation: move 5s infinite linear;
+            width: 80%;
+            border-radius: 15px;
+        }
+
+        @keyframes move {
+            0% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(20px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        /* Efeito de vidro/reflexo */
+        .image-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.1);
+            filter: blur(10px);
+            z-index: 1;
+            border-radius: 20px;
+        }
+
         .video-container {
             background: #112b55;
             padding: 20px;
@@ -136,11 +182,17 @@
 
         .social-media a img {
             width: 50px;
+            border-radius: 50%; /* Imagens arredondadas */
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Nova seção com a imagem animada -->
+        <div class="image-container">
+            <img src="ganha.jpeg" alt="Ganha">
+        </div>
+
         <div class="video-container">
             <video controls>
                 <source src="como.mp4" type="video/mp4">
@@ -151,7 +203,7 @@
 
         <div class="promo-box">
             <h2 class="promo-title">
-                <img src="shield-icon.png" alt="Ícone Placard"> Placard
+                <img src="pla.png" alt="Ícone Placard"> Placard
             </h2>
             <div class="promo-info">
                 <h3>1000 MT</h3>
@@ -167,7 +219,7 @@
 
         <div class="promo-box">
             <h2 class="promo-title">
-                <img src="trophy-icon.png" alt="Ícone MegaGameLive"> MegaGameLive
+                <img src="me.jpeg" alt="Ícone MegaGameLive"> MegaGameLive
             </h2>
             <div class="promo-info">
                 <h3>5000 MT</h3>
@@ -203,4 +255,4 @@
         </div>
     </div>
 </body>
-                                                            </html>
+                </html>
