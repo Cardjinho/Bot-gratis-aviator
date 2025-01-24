@@ -3,283 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guia para Afiliados</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <style>
-        /* Reset e configuração geral */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
-            overflow-x: hidden;
-        }
-
-        /* Cabeçalho */
-        header {
-            position: relative;
-            height: 250px;
-            text-align: center;
-            background: #007bff;
-            color: white;
-            padding: 20px;
-            overflow: hidden;
-        }
-        header h1 {
-            font-size: 2em;
-            margin-top: 20px;
-        }
-        header p {
-            font-size: 1.2em;
-            margin-top: 10px;
-        }
-
-        /* Girassol de imagens */
-        .carousel {
-            position: absolute;
-            top: 70px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 300px;
-            height: 50px;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .carousel img {
-            width: 300px;
-            height: 50px;
-            object-fit: cover;
-            animation: slide 8s infinite;
-        }
-        @keyframes slide {
-            0% { transform: translateX(0); }
-            25% { transform: translateX(-300px); }
-            50% { transform: translateX(-600px); }
-            75% { transform: translateX(-900px); }
-            100% { transform: translateX(0); }
-        }
-
-        /* Botão WhatsApp */
-        .whatsapp-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #25d366;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            font-size: 1.5em;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-        }
-
-        /* Diálogo do botão WhatsApp */
-        .dialog {
-            display: none;
-            position: fixed;
-            bottom: 100px;
-            right: 20px;
-            background: #fff;
-            border: 2px solid #007bff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            z-index: 10;
-        }
-        .dialog button {
-            background: #007bff;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        /* Ferramentas Avançadas */
-        .tools-section {
-            margin: 50px auto;
-            text-align: center;
-            padding: 30px 20px;
-            background: #fff;
-            border-radius: 10px;
-            max-width: 600px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .tools-section img {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            margin-bottom: 20px;
-            border-radius: 10px;
-        }
-        .tools-section h3 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-        }
-        .tools-section ul {
-            list-style: none;
-            margin-bottom: 20px;
-        }
-        .tools-section ul li {
-            margin-bottom: 10px;
-            text-align: left;
-            padding-left: 30px;
-            position: relative;
-        }
-        .tools-section ul li:before {
-            content: "\f00c"; /* Ícone do Font Awesome */
-            font-family: "Font Awesome 5 Free";
-            font-weight: 900;
-            position: absolute;
-            left: 0;
-            color: #28a745;
-        }
-        .tools-section button {
-            background: #007bff;
-            color: white;
-            padding: 12px 30px;
-            font-size: 1em;
-            border: none;
-            border-radius: 16px;
-            cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        .tools-section button:disabled {
-            background: #ccc;
-            cursor: not-allowed;
-        }
-
-        /* Menu Drawer */
-        .drawer {
-            position: fixed;
-            top: 0;
-            left: -250px;
-            width: 250px;
-            height: 100%;
-            background: #333;
-            color: white;
-            box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            padding-top: 60px;
-            z-index: 100;
-        }
-        .drawer a {
-            padding: 10px 15px;
-            text-decoration: none;
-            color: white;
-            display: block;
-            font-size: 1.2em;
-            border-bottom: 1px solid #555;
-        }
-        .drawer a:hover {
-            background: #444;
-        }
-        .drawer-open {
-            left: 0;
-        }
-
-        .drawer-toggle {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-        }
-        .drawer-toggle img {
-            width: 40px;
-            height: 40px;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            margin-top: 30px;
-            padding: 20px;
-            background: #007bff;
-            color: white;
-            font-size: 1em;
-        }
-    </style>
+    <title>Site de Afiliado</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Cabeçalho -->
     <header>
-        <h1>Guia para Afiliados</h1>
-        <p>Aprenda como obter mais rendimento com novas estratégias de marketing.</p>
-        <div class="carousel">
-            <img src="mega.jpeg" alt="Mega">
-            <img src="ganhos.png" alt="Ganhos">
-            <img src="fera.png" alt="Fera">
-            <img src="aviator.png" alt="Aviator">
+        <div class="aviator-animation">
+            <img src="aviator.gif" alt="Aviator Animation">
         </div>
     </header>
 
-    <!-- Ferramentas Avançadas -->
-    <section id="ferramentas" class="tools-section">
-        <img src="bulksender.png" alt="Bulk Sender">
-        <h3>Ferramentas de Partilha Avançada</h3>
-        <ul>
-            <li>Partilhar mensagens em massa sem travas.</li>
-            <li>Modo anti-ban para WhatsApp.</li>
-        </ul>
-        <button id="downloadButton" disabled onclick="showAlert()">BAIXAR FERRAMENTA</button>
+    <section class="explicacao">
+        <h2>EXPLICAÇÃO DO CASSINO:</h2>
+        <div class="video-container">
+            <video controls>
+                <source src="como.mp4" type="video/mp4">
+                Seu navegador não suporta vídeos.
+            </video>
+        </div>
+        <a href="https://media1.placard.co.mz/redirect.aspx?pid=4241&bid=1690" class="btn-registrar">REGISTRAR</a>
     </section>
 
-    <!-- Drawer Menu -->
-    <div id="drawer" class="drawer">
-        <a href="#">Faça um anúncio</a>
-        <a href="#">Entre em contato no WhatsApp</a>
-        <a href="#">Sobre nós</a>
-        <a href="#">Configurações</a>
-    </div>
+    <section class="plataformas">
+        <div class="card">
+            <h3>Placard</h3>
+            <a href="https://media1.placard.co.mz/redirect.aspx?pid=4241&bid=1690" class="btn">Acessar</a>
+        </div>
+        <div class="card">
+            <h3>MegaGameLive</h3>
+            <a href="https://www.megagamelive.com" class="btn">Acessar</a>
+        </div>
+    </section>
 
-    <!-- Botão abrir Drawer -->
-    <button class="drawer-toggle" onclick="toggleDrawer()">
-        <img src="defi.png" alt="Abrir Menu">
-    </button>
+    <section class="estatisticas">
+        <div class="stat">
+            <h4>GANHOS</h4>
+            <p>Mais de 1M</p>
+        </div>
+        <div class="stat">
+            <h4>TOTAL DE USUÁRIOS</h4>
+            <p>500.000</p>
+        </div>
+        <div class="stat">
+            <h4>CLIENTES SATISFEITOS</h4>
+            <p>99%</p>
+        </div>
+    </section>
 
-    <!-- Footer -->
     <footer>
-        <p>Programador: Milionário Mods<br>WhatsApp: +258 853984699</p>
+        <div class="social-icons">
+            <img src="telegram.png" alt="Telegram">
+            <img src="whatsapp.png" alt="WhatsApp">
+            <img src="facebook.png" alt="Facebook">
+        </div>
     </footer>
-
-    <!-- Botão WhatsApp -->
-    <button class="whatsapp-button" onclick="toggleDialog()">
-        <i class="fab fa-whatsapp"></i>
-    </button>
-    <div class="dialog" id="dialog">
-        <p>Gostaria de obter ferramentas avançadas para o seu trabalho? São apenas 200,00MT!</p>
-        <button onclick="redirectToWhatsApp()">Comprar Ferramenta</button>
-    </div>
-
-    <script>
-        // Toggle Drawer Menu
-        function toggleDrawer() {
-            const drawer = document.getElementById('drawer');
-            drawer.classList.toggle('drawer-open');
-        }
-
-        // Toggle WhatsApp Dialog
-        function toggleDialog() {
-            const dialog = document.getElementById('dialog');
-            dialog.style.display = dialog.style.display === 'none' || !dialog.style.display ? 'block' : 'none';
-        }
-
-        function redirectToWhatsApp() {
-            window.open("https://wa.me/258853984699?text=Gostaria+de+comprar+a+ferramenta+de+partilha+por+200%2C00MT", "_blank");
-        }
-    </script>
 </body>
     </html>
